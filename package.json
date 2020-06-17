@@ -1,0 +1,11 @@
+{
+  "name": "vue-pdf-viewer",
+  "version": "1.0.0",
+  "description": "Pdf viewer based on Vuejs and pdf.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
