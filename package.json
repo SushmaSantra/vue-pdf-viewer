@@ -2,18 +2,42 @@
   "name": "vue-pdf-viewer",
   "version": "1.0.0",
   "description": "Pdf viewer based on Vuejs and pdf.js",
-  "main": "index.js",
+  "main": "dist/pdfViewer.umd.js",
+  "module": "dist/pdfViewer.esm.js",
+  "unpkg": "dist/pdfViewer.min.js",
+  "browser": {
+    "./sfc": "src/pdfViewer.vue"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "attributes.json",
+    "tags.json"
+  ],
+  "vetur": {
+    "tags": "tags.json",
+    "attributes": "attributes.json"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:unpkg & npm run build:es & npm run build:umd",
+    "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/simplealertcomponent.umd.js",
+    "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/simplealertcomponent.esm.js",
+    "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/simplealertcomponent.min.js"
+ 
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "vue": "^2.6.11",
-    "rollup": "^1.17.0",
-    "@rollup/plugin-buble": "^0.21.3",
-    "@rollup/plugin-commonjs": "^11.1.0",
-    "rollup-plugin-vue": "^5.0.1",
+  "devDependencies": {
+    "cross-env": "^5.2.0",
+    "minimist": "^1.2.0",
+    "rollup": "^1.14.4",
+    "rollup-plugin-buble": "^0.19.6",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify-es": "0.0.1",
+    "rollup-plugin-vue": "^4.7.2",
+    "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
   }
 }
