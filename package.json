@@ -1,6 +1,6 @@
 {
-  "name": "vue-pdf-viewer",
-  "version": "1.0.0",
+  "name": "pdfviewer-w-pdfjs",
+  "version": "0.0.1",
   "description": "Pdf viewer based on Vuejs and pdf.js",
   "main": "dist/pdfViewer.umd.js",
   "module": "dist/pdfViewer.esm.js",
@@ -24,7 +24,6 @@
     "build:umd": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format umd --file dist/simplealertcomponent.umd.js",
     "build:es": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format es --file dist/simplealertcomponent.esm.js",
     "build:unpkg": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife --file dist/simplealertcomponent.min.js"
- 
   },
   "author": "",
   "license": "ISC",
@@ -39,5 +38,12 @@
     "rollup-plugin-vue": "^4.7.2",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.0",
+    "bootstrap-vue": "^2.15.0",
+    "lodash": "^4.17.19",
+    "pdfjs-dist": "^2.4.456",
+    "worker-loader": "^2.0.0"
   }
 }
